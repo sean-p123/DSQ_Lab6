@@ -4,14 +4,16 @@ import axios from "axios";
 
 export class Read extends React.Component{
 
+
+    
     componentDidMount(){
         //go get address from url
-        axios.get('https://jsonblob.com/api/jsonblob/1027219693823606784')
+        axios.get('http://localhost:4000/api/books')
         //if you get the url back correctly, then...
         .then(
             (response)=>{
                 this.setState({
-                    books: response.data
+                    books: response.data.mybooks
                 })
             }
         )
